@@ -27,22 +27,28 @@ public class CalculetteExo1 {
         double operand1 = sc.nextDouble();
         System.out.println("Please enter the second operand:");
         double operand2 = sc.nextDouble();
-        double result = 0;
+        double result; 
         if (1==operator) { 
             result = operand1 + operand2;
+            System.out.println("The result is "+result);
         }
         if (2==operator)  { 
             result = operand1 - operand2;
+            System.out.println("The result is "+result);
         }
         if (3==operator)  { 
             result = operand1 * operand2;
+            System.out.println("The result is "+result);
         }
         if (4==operator)  { 
             result = operand1 / operand2;
+            System.out.println("The result is "+result);
         }
         if (5==operator)  { 
             result = operand1 % operand2;
+            System.out.println("The result is "+result);
         }
+        
     }
 }            
     
