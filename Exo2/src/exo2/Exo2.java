@@ -5,6 +5,8 @@
  */
 package exo2;
 
+import java.util.Scanner;
+
 public class Exo2 {
 
     /**
@@ -15,7 +17,10 @@ public class Exo2 {
         int nb; // nombre dentiers a additionner
         int result; // resultat
         int ind; //indice
-        nb=5;
+        //nb=5;
+        var sc = new Scanner(System.in);
+        System.out.println("\n Entrer le nombre :");
+        nb = sc.nextInt();
         result=0;
         // Addition des nb premiers entiers
         ind=1;
@@ -25,8 +30,8 @@ public class Exo2 {
         }
         // Affichage du resultat
         System.out.println();
-        System.out.println("La somme des "+ nb + "entiers est: "+result);
+        System.out.println("La somme des "+ nb + "entiers est: " +result);
     }
     
-}
+}   
     
