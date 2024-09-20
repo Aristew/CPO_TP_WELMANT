@@ -9,7 +9,7 @@ package calculette.exo.pkg1;
 
 import java.util.Scanner;
 
-public class CalculetteExo1 {
+public class Calculette {
 
 
 
