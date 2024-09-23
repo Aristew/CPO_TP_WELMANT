@@ -23,10 +23,14 @@ public class TP1_manipNombresInt_WELMANT {
         int b = sc.nextInt();
         int difference = a - b;
         int produit = a*b;
+        int quotient = a/b;
+        int reste = a%b;
         System.out.println("Voici la somme: "+ a+b); 
         System.out.println("Voici la difference: "+ difference);
         System.out.println("Voici le produit: "+ produit);
-        // TODO code application logic here
+        System.out.println("Voici le quotient: "+ quotient);
+        System.out.println("Voici le reste de la division euclidienne: "+ reste);
+ // TODO code application logic here
     }
     
 }
