@@ -19,17 +19,32 @@ public class TP1_convertisseur_WELMANT {
         // Demander à l'utilisateur de saisir une valeur réelle en degré Celsius
         try (java.util.Scanner scanner = new Scanner(System.in)) {
             // Demander à l'utilisateur de saisir une valeur réelle en degré Celsius
-            System.out.print("Entrez une température en degré Celsius : ");
+            System.out.print("Entrez une temperature en degre Celsius : ");
             double celsius = scanner.nextDouble();
             // Appel de la méthode CelciusVersKelvin et affichage du résultat
             double kelvin = CelciusVersKelvin(celsius);
-            System.out.println("Température en Kelvin : " + kelvin);
-            // Test des autres conversions
-            System.out.println("Température en Farenheit : " + CelciusVersFarenheit(celsius));
-            System.out.println("Température Kelvin vers Celsius : " + KelvinVersCelcius(kelvin));
-            System.out.println("Température Farenheit vers Celsius : " + FarenheitVersCelcius(CelciusVersFarenheit(celsius)));
-            System.out.println("Température Kelvin vers Farenheit : " + KelvinVersFarenheit(kelvin));
-            System.out.println("Température Farenheit vers Kelvin : " + FarenheitVersKelvin(CelciusVersFarenheit(celsius)));
+            System.out.println("Saisissez la conversion que vous souhaiter effectuer : \n 1) De Celcius vers Kelvin \n 2) De Kelvin vers Celcius \n 3) De Celcius vers Farenheit  \n 4) De Farenheit vers Celcius \n 5) De Kelvin vers Farenheit \n 6) De Farenheit vers Kelvin ");    
+            int a = scanner.nextInt();
+            switch (a){
+                    case 1 -> {
+            System.out.println("Temperature en Kelvin : " + kelvin);
+                    }
+                    case 2 -> {
+            System.out.println("Temperature en Farenheit : " + CelciusVersFarenheit(celsius));
+                    }
+                    case 3 -> {
+            System.out.println("Temperature Kelvin vers Celsius : " + KelvinVersCelcius(kelvin));
+                    }
+                    case 4 -> {
+            System.out.println("Temperature Farenheit vers Celsius : " + FarenheitVersCelcius(CelciusVersFarenheit(celsius)));
+                    }
+                    case 5 -> {
+            System.out.println("Temperature Kelvin vers Farenheit : " + KelvinVersFarenheit(kelvin));
+                    }
+                    case 6 -> {
+            System.out.println("Temperature Farenheit vers Kelvin : " + FarenheitVersKelvin(CelciusVersFarenheit(celsius)));
+                    }
+            }
             // Fermeture du scanner
         }
     }
