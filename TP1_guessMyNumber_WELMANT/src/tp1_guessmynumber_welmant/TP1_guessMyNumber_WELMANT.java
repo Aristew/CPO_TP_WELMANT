@@ -19,7 +19,7 @@ public class TP1_guessMyNumber_WELMANT {
         int compteur = 0; // Compteur de tentatives
         var sc = new Scanner(System.in); // Scanner pour lire les entrées utilisateur
 
-        n = generateurAleat.nextInt(101);// Génère un nombre aléatoire entre 0 et 99
+        n = generateurAleat.nextInt(101);// Génère un nombre aléatoire entre 0 et 100
         System.out.println("Choisissez la difficulté : \n 1) Facile \n 2) Normal \n 3) Difficile ");
         int z = sc.nextInt(); // Lire le choix de la difficulté
 
