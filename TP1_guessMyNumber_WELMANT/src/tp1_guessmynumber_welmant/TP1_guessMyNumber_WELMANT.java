@@ -24,23 +24,31 @@ public class TP1_guessMyNumber_WELMANT {
         int compteur = 0;
         var sc = new Scanner(System.in);
         n = generateurAleat.nextInt(100);
-        while (i<1){
-        compteur += 1;
-        System.out.println("Saisir un nombre entier entre 0 et 100");
-        int a = sc.nextInt();
-        if (a == n ){
-            System.out.println("gagne");
-            i += 1;
-        }
-        else if (a < n){
-            System.out.println("trop petit");
-        }
-        else if (a>n){
-            System.out.println("Trop grand");
-        }
-        }
-        System.out.print("Nombre de tentatives = "+ compteur);
+        System.out.println("Choissisez la difficulté : \n 1) Facile \n 2) Normal \n 3) Difficile ");
+        int z = sc.nextInt();
+        switch (z){
+            case -> 1 {
+                while (i<1){
+                    compteur += 1;
+                    System.out.println("Saisir un nombre entier entre 0 et 100");
+                    int a = sc.nextInt();
+                    if (a == n ){
+                        System.out.println("gagne");
+                        i += 1;
+                    }
+                    else if (a < n){
+                    System.out.println("trop petit");
+                    }
+                    else if (a>n){
+                    System.out.println("Trop grand");
+                    }
+                    }
+                    System.out.print("Nombre de tentatives = "+ compteur);
             
-    }
+}
     
 }
+
+}
+    
+
