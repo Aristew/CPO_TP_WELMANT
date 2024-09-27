@@ -101,5 +101,6 @@ public class TP1_guessMyNumber_WELMANT {
                 System.out.println("Choix de difficulté invalide. Veuillez relancer le programme.");
             }
         }
+          
     }
 }
