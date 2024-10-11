@@ -14,11 +14,17 @@ public class TP2_Bieres_WELMANT {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        BouteilleBierre uneBiere = new BouteilleBiere();
-        uneBiere.nom = "Cuvée des trolls";
-        uneBiere.degreAlcool = 7.0 ;
-        uneBiere.brasserie ="Dubuisson";
-        uneBiere.Ouverte = false;
+        BouteilleBiere uneBiere = new BouteilleBiere("Cuvée des trolls", (float) 7.0,"Dubuisson") ;
+        uneBiere.lireEtiquette();
+        BouteilleBiere uneBiere2 = new BouteilleBiere("Leffe", (float) 6.6,"Abbaye de Leffe") ;
+        uneBiere2.lireEtiquette();
+        BouteilleBiere uneBiere3 = new BouteilleBiere("Duvel", (float) 8.5, "Duvel Moortgat");
+        uneBiere3.lireEtiquette();
+        BouteilleBiere uneBiere4 = new BouteilleBiere("Chimay Bleue", (float) 9.0, "Abbaye de Scourmont");
+        uneBiere4.lireEtiquette();
+        BouteilleBiere uneBiere5 = new BouteilleBiere("Karmeliet Triple", (float) 8.4, "Bosteels");
+        uneBiere5.lireEtiquette();
+
     }
     
 }

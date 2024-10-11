@@ -1,3 +1,5 @@
+package tp2_bieres_welmant;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -15,5 +17,16 @@ public class BouteilleBiere {
     public void lireEtiquette() {
         System.out.println("Bouteille de " + nom +" (" + degreAlcool + " degres) \nBrasserie : " + brasserie ) ;
 }
-    
+    public void Décapsuler(){
+        if (Ouverte == false) {
+        Ouverte = true;
+        }
+    }
+    public BouteilleBiere(String unNom, float unDegre, String
+    uneBrasserie) {
+    nom = unNom;
+    degreAlcool = unDegre;
+    brasserie = uneBrasserie;
+    Ouverte = false;
+    }
 }
