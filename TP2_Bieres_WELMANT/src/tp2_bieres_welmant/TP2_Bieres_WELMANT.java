@@ -24,7 +24,14 @@ public class TP2_Bieres_WELMANT {
         uneBiere4.lireEtiquette();
         BouteilleBiere uneBiere5 = new BouteilleBiere("Karmeliet Triple", (float) 8.4, "Bosteels");
         uneBiere5.lireEtiquette();
-
+        uneBiere.Décapsuler();
+        uneBiere3.Décapsuler();
+        uneBiere5.Décapsuler();
+        System.out.println(uneBiere) ;
+        System.out.println(uneBiere2) ;
+        System.out.println(uneBiere3) ;
+        System.out.println(uneBiere4) ;
+        System.out.println(uneBiere5) ;
     }
     
 }
