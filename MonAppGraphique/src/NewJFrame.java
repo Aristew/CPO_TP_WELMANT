@@ -45,6 +45,11 @@ public class NewJFrame extends javax.swing.JFrame {
         jLabel1.setText("Saisir Prénom");
 
         Bouton.setText("OK");
+        Bouton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BoutonActionPerformed(evt);
+            }
+        });
 
         jScrollPane1.setViewportView(Saisie);
 
@@ -92,10 +97,14 @@ public class NewJFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void BoutonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonActionPerformed
     String prenom;
     prenom = Saisie.getText();
-    Resultat.setText( prenom);
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    Resultat.setText( prenom);    // TODO add your handling code here:
+    }//GEN-LAST:event_BoutonActionPerformed
 
     /**
      * @param args the command line arguments
