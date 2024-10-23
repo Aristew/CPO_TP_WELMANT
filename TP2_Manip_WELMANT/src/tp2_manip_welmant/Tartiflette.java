@@ -11,7 +11,7 @@ package tp2_manip_welmant;
 public class Tartiflette {
     int nbCalories;
     
-    public Tartiflette(int nbCalories) {
-        nbCalories = a;
+    public Tartiflette(int calories) {
+        nbCalories = calories;  
     }
 }

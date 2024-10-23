@@ -11,7 +11,7 @@ package tp2_manip_welmant;
 public class Moussaka {
     int nbCalories;
     
-    public Moussaka(int nbCalories) {
-        nbCalories = 0;
+    public Moussaka(int Calories) {
+        nbCalories = Calories;
     }
 }
