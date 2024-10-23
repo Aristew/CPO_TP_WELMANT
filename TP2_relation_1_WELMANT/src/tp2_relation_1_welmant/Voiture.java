@@ -19,7 +19,8 @@ public class Voiture {
         this.modele = modele;
         this.marque = marque;
         this.puissanceCV = puissanceCV;
-    }
+        this.proprietaire = null;       
+}
 
     // Méthode toString pour représenter l'objet sous forme de chaîne de caractères
     @Override
