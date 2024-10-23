@@ -22,6 +22,22 @@ public class TP2_relation_1_WELMANT {
         Personne bob = new Personne("Bobby", "Sixkiller");
         Personne reno = new Personne("Reno", "Raines");
         System.out.println("liste des voitures disponibles "+ uneClio + "\n" + uneAutreClio + "\n" + une2008 + "\n" + uneMicra ) ;
+        bob.liste_voitures[0] = uneClio;
+        uneClio.proprietaire = bob ;
+        bob.nbVoitures += 1;
+        System.out.println("la premiere voiture de Bobby est " + bob.liste_voitures[bob.nbVoitures - 1] ) ;
+        bob.liste_voitures[1] = une2008 ;
+        bob.nbVoitures += 1;
+        une2008.proprietaire = bob;
+        reno.liste_voitures[0] = uneAutreClio;
+        reno.nbVoitures += 1;
+        uneAutreClio.proprietaire = reno;
+        System.out.println("la premiere voiture de Reno est " + reno.liste_voitures[reno.nbVoitures - 1] ) ;
+        reno.liste_voitures[1] = uneMicra;
+        reno.nbVoitures += 1;
+        uneMicra.proprietaire = reno;
+        System.out.println("la deuxième voiture de Bobby est " + bob.liste_voitures[bob.nbVoitures - 1] ) ;
+        System.out.println("la deuxième voiture de Reno est " + reno.liste_voitures[reno.nbVoitures - 1] ) ;
     }
   
 }
