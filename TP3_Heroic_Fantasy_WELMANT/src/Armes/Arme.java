@@ -9,7 +9,7 @@ package Armes;
  * @author Welmant Ariste
  * @date 06/11/2024
  */
-abstract class Arme {
+public abstract class Arme {
     String Nom;
     int Attaque;
 
