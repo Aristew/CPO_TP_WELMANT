@@ -2,17 +2,24 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package tp3_heroic_fantasy_welmant;
+package Armes;
 
 /**
  *
  * @author arist
  */
 public class Baton extends Arme {
-    
-    public Baton(String nom, int niveauAttaque) {
-        super(nom, niveauAttaque);
+    int age;
+
+    public Baton(String nom, int Attaque, int age) {
+        super(nom, Attaque);
+        this.age = Math.max(0,Math.min(age, 100));
     }
+    @Override
+    public String toString() {
+        return super.toString() + ", Âge : " + age;
+    }
+   
     
     
 }

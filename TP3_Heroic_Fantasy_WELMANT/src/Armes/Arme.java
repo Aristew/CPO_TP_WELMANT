@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package tp3_heroic_fantasy_welmant;
+package Armes;
 
 /**
  *
@@ -13,9 +13,9 @@ abstract class Arme {
     String Nom;
     int Attaque;
 
-    public Arme(String nom, int niveauAttaque) {
+    public Arme(String nom, int Attaque) {
         this.Nom = nom;
-        this.Attaque = Math.min(niveauAttaque, 100);
+        this.Attaque = Math.max(0, Math.min(Attaque, 100));
     }
     
     public int getAttaque() {
@@ -27,7 +27,7 @@ abstract class Arme {
     }
     @Override
     public String toString() {
-    return "Arme : " + Nom + "Niveau d'attaque :" + Attaque;
+    return "Arme : " + Nom + " Niveau d'attaque :" + Attaque;
     }
     
 }
