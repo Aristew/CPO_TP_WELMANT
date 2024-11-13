@@ -60,6 +60,25 @@ public class TP3_Heroic_Fantasy_WELMANT {
         for (int j = 0; j < personnages.size(); j++) {
             System.out.println(personnages.get(j)); 
         }
+        Guerrier arthur = new Guerrier("Arthur", 78, true);
+
+        // Création des armes
+        Epee excalibur = new Epee("Excalibur", 7, 5);
+        Epee durandal = new Epee("Durandal", 4, 7);
+
+        // Ajout des armes à l'inventaire du personnage
+        arthur.ajouterArme(excalibur);
+        arthur.ajouterArme(durandal);
+
+        // Équiper une arme par son nom
+        arthur.equiperArme("Excalibur");
+
+        // Afficher les informations du personnage
+        System.out.println(arthur);
+
+        // Tester un nom d'arme qui n'existe pas
+        conan.equiperArme("Inexistante");
         }
-    }
+        }
+
     
