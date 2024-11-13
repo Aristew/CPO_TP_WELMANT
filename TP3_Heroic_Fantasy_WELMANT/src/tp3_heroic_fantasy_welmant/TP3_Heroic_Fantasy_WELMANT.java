@@ -126,6 +126,7 @@ public class TP3_Heroic_Fantasy_WELMANT {
         ryze.attaquer(leonidas);
         System.out.println("Après l'attaque du magicien sur le guerrier : ");
         System.out.println(leonidas);
+        System.out.println(ryze);
         System.out.println("Le guerrier est-il toujours vivant ? " + leonidas.estVivant());
 
         // Le guerrier attaque le magicien
