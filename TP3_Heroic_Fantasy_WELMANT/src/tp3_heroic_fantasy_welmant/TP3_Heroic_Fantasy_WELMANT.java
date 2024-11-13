@@ -103,7 +103,7 @@ public class TP3_Heroic_Fantasy_WELMANT {
         ryze.ajouterArme(espadon); // 1 épée
 
         // Affichage du nombre d'armes de prédilection pour le magicien
-        System.out.println("Nombre d'armes de prédilection de Ryze : " + ryze.compterArmesDePredilection());
+        System.out.println("Nombre d'armes de prrdilection de Ryze : " + ryze.compterArmesDePredilection());
 
         // Affichage des caractéristiques des personnages
         System.out.println(leonidas);

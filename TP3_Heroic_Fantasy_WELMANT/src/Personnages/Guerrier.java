@@ -49,6 +49,6 @@ public class Guerrier extends Personnage {
     }
     @Override
     public String toString() {
-        return super.toString() + ", À cheval : " + (aCheval ? "Oui" : "Non");
+        return super.toString() + ", A cheval : " + (aCheval ? "Oui" : "Non");
     }
 }

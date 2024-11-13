@@ -52,7 +52,7 @@ public abstract class Personnage implements EtreVivant{
     public void ajouterArme(Arme arme) {
         if (inventaire.size() < 5) {
             inventaire.add(arme);
-            System.out.println("Arme " + arme.getNom() + " ajoutée à l'inventaire de " + nom);
+            System.out.println("Arme " + arme.getNom() + " ajoutee à l'inventaire de " + nom);
         } else {
             System.out.println("Inventaire plein ! Impossible d'ajouter l'arme " + arme.getNom());
         }
@@ -68,7 +68,7 @@ public abstract class Personnage implements EtreVivant{
         for (Arme arme : inventaire) {
             if (arme.getNom().equals(nomArme)) {
                 armeEnMain = arme;
-                System.out.println(nom + " a équipé l'arme " + nomArme);
+                System.out.println(nom + " a equipe l'arme " + nomArme);
                 return;
             }
         }
