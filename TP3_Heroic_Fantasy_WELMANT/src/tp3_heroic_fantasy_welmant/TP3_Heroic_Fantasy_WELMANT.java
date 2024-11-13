@@ -31,27 +31,32 @@ public class TP3_Heroic_Fantasy_WELMANT {
         armes.add(Durandal);
         armes.add(Chene);
         armes.add(Charme);
+        
+        // Création des magiciens 
+        Magicien gandalf = new Magicien("Gandalf", 65, true);  // Confirmé
+        Magicien garcimore = new Magicien("Garcimore", 44, false);  // Novice
 
+        // Création des guerriers 
+        Guerrier conan = new Guerrier("Conan", 78, false);  // À pied
+        Guerrier lannister = new Guerrier("Lannister", 45, true);  // À cheval
+        
+        // Création de la liste dynamique pour stocker les personnages
+        ArrayList<Personnage> personnages = new ArrayList<>();
+
+        // Ajout des personnages à la liste
+        personnages.add(gandalf);
+        personnages.add(garcimore);
+        personnages.add(conan);
+        personnages.add(lannister);
+        
         // Affichage des armes
         for (int i = 0; i < armes.size(); i++) {
             System.out.println(armes.get(i));
-        
-        // Création des personnages
-        Guerrier arthur = new Guerrier("Arthur", 100, true);
-        Magicien merlin = new Magicien("Merlin", 80, true);
-
-        // Affichage des personnages
-        System.out.println(arthur);
-        System.out.println(merlin);
-
-        // Modification des propriétés spécifiques
-        arthur.setACheval(false);
-        merlin.setConfirme(false);
-
-        // Affichage après modification
-        System.out.println("Après modifications :");
-        System.out.println(arthur);
-        System.out.println(merlin);
+        }    
+        // Affichage des caractéristiques de chaque personnage
+        for (int j = 0; j < personnages.size(); j++) {
+            System.out.println(personnages.get(j)); 
+        }
+        }
     }
-}
-}
+    
