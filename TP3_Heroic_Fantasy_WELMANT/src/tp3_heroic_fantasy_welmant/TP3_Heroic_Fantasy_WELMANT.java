@@ -35,6 +35,23 @@ public class TP3_Heroic_Fantasy_WELMANT {
         // Affichage des armes
         for (int i = 0; i < armes.size(); i++) {
             System.out.println(armes.get(i));
+        
+        // Création des personnages
+        Guerrier arthur = new Guerrier("Arthur", 100, true);
+        Magicien merlin = new Magicien("Merlin", 80, true);
+
+        // Affichage des personnages
+        System.out.println(arthur);
+        System.out.println(merlin);
+
+        // Modification des propriétés spécifiques
+        arthur.setACheval(false);
+        merlin.setConfirme(false);
+
+        // Affichage après modification
+        System.out.println("Après modifications :");
+        System.out.println(arthur);
+        System.out.println(merlin);
     }
 }
 }
