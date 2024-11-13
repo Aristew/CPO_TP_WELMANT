@@ -9,29 +9,100 @@ package Personnages;
  * @author arist
  */
 // Classe abstraite Personnage
+import Armes.Arme;
+import Armes.Baton;
+import Armes.Epee;
+import java.util.ArrayList;
+
 public abstract class Personnage {
     private String nom;
-    private int niveauDeVie;
+    private int niveauVie;
+    private ArrayList<Arme> inventaire;  // Liste dynamique d'armes avec limite de 5
+    private Arme armeEnMain;  // Arme actuellement équipée (initialisée à null)
+    
+    // Attribut statique pour compter le nombre total de personnages
+    private static int nombrePersonnages = 0;
 
-    // Constructeur de Personnage
-    public Personnage(String nom, int niveauDeVie) {
+    public Personnage(String nom, int niveauVie) {
         this.nom = nom;
-        this.niveauDeVie = niveauDeVie;
+        this.niveauVie = niveauVie;
+        this.inventaire = new ArrayList<>();
+        this.armeEnMain = null;
+        
+        // Incrémenter le compteur de personnages lors de la création
+        nombrePersonnages++;
     }
 
-    // Getter pour le niveau de vie
-    public int getNiveauDeVie() {
-        return niveauDeVie;
+    // Méthode statique pour obtenir le nombre de personnages
+    public static int getNombrePersonnages() {
+        return nombrePersonnages;
     }
-
-    // Getter pour le nom
+    
+    public int getNiveauVie() {
+        return niveauVie;
+    }
+    
     public String getNom() {
         return nom;
     }
 
-    // Méthode toString pour afficher les informations du personnage
+    // 32. Méthode pour ajouter une arme à l'inventaire (max 5 armes)
+    public void ajouterArme(Arme arme) {
+        if (inventaire.size() < 5) {
+            inventaire.add(arme);
+            System.out.println("Arme " + arme.getNom() + " ajoutée à l'inventaire de " + nom);
+        } else {
+            System.out.println("Inventaire plein ! Impossible d'ajouter l'arme " + arme.getNom());
+        }
+    }
+
+    // 34. Getter pour obtenir l'arme actuellement équipée
+    public Arme getArmeEnMain() {
+        return armeEnMain;
+    }
+    
+    // 35. Méthode pour équiper une arme par son nom
+    public void equiperArme(String nomArme) {
+        for (Arme arme : inventaire) {
+            if (arme.getNom().equals(nomArme)) {
+                armeEnMain = arme;
+                System.out.println(nom + " a équipé l'arme " + nomArme);
+                return;
+            }
+        }
+        System.out.println("L'arme " + nomArme + " n'est pas dans l'inventaire de " + nom);
+    }
+    
+    public int compterArmesDePredilection() {
+        int compteur = 0;
+        for (Arme arme : inventaire) {
+            if ((this instanceof Guerrier && arme instanceof Epee) ||
+                (this instanceof Magicien && arme instanceof Baton)) {
+                compteur++;
+            }
+        }
+        return compteur;
+    }
+
+    @Override
+    protected void finalize() throws Throwable {
+        try {
+            nombrePersonnages--;  // Décrémentation lors de la destruction de l'objet
+        } finally {
+            super.finalize();  // Appel à la méthode finalize() de la superclasse
+        }
+    }
+
     @Override
     public String toString() {
-        return "Nom : " + nom + ", Niveau de Vie : " + niveauDeVie;
+        String description = "Nom : " + nom + ", Niveau de Vie : " + niveauVie;
+        if (armeEnMain != null) {
+            description += ", Arme en Main : " + armeEnMain;
+        } else {
+            description += ", Pas d'arme équipée";
+        }
+        return description;
     }
 }
+
+

@@ -77,8 +77,45 @@ public class TP3_Heroic_Fantasy_WELMANT {
         System.out.println(arthur);
 
         // Tester un nom d'arme qui n'existe pas
-        conan.equiperArme("Inexistante");
+        arthur.equiperArme("Inexistante");
+        
+        Guerrier leonidas = new Guerrier("Leonidas", 99, true);
+        Magicien ryze = new Magicien("Ryze", 12, false);
+
+        // Création des armes
+        Epee xiphos = new Epee("Naue II", 8, 9);
+        Epee kukuri = new Epee("Cho ", 4, 7);
+        Epee espadon = new Epee("Arondight ", 5, 6);
+
+        Baton or = new Baton("Serpent", 4, 5);
+        Baton argent = new Baton("Rose", 5, 6);
+        Baton vigne = new Baton("Gul", 3, 4);
+        
+        // Ajout des armes au guerrier (Leonidas)
+        leonidas.ajouterArme(or); // 1 bâton
+        leonidas.ajouterArme(xiphos); // 1ère épée
+        leonidas.ajouterArme(kukuri); // 2ème épée
+        leonidas.equiperArme("Naue II"); // Choix de l'épée "Naue II"
+
+        // Ajout des armes au magicien (Ryze)
+        ryze.ajouterArme(argent); // 1er bâton
+        ryze.ajouterArme(vigne); // 2ème bâton
+        ryze.ajouterArme(espadon); // 1 épée
+
+        // Affichage du nombre d'armes de prédilection pour le magicien
+        System.out.println("Nombre d'armes de prédilection de Ryze : " + ryze.compterArmesDePredilection());
+
+        // Affichage des caractéristiques des personnages
+        System.out.println(leonidas);
+        System.out.println(ryze);
+           
+
+        // Affichage des compteurs
+        System.out.println("Nombre total de personnages : " + Personnage.getNombrePersonnages());
+        System.out.println("Nombre de guerriers : " + Guerrier.getNombreGuerriers());
+        System.out.println("Nombre de magiciens : " + Magicien.getNombreMagiciens());
+    }
         }
-        }
+
 
     
