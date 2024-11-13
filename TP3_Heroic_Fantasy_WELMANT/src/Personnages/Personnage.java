@@ -19,7 +19,7 @@ public abstract class Personnage implements EtreVivant{
     private String nom;
     private int niveauVie;
     private ArrayList<Arme> inventaire;  // Liste dynamique d'armes avec limite de 5
-    private Arme armeEnMain;  // Arme actuellement équipée (initialisée à null)
+    public Arme armeEnMain;  // Arme actuellement équipée (initialisée à null)
     
     
     // Attribut statique pour compter le nombre total de personnages
@@ -116,6 +116,40 @@ public abstract class Personnage implements EtreVivant{
         niveauVie -= points;
         System.out.println(nom + " a ete attaque et a perdu " + points + " points de vie.");
     }
+    
+    public void attaquer(Personnage autrePersonnage) {
+    int degats = 0;
+
+    // Vérifier si le personnage a une arme équipée
+    if (armeEnMain != null) {
+        // Si c'est un magicien utilisant un bâton
+        if (this instanceof Magicien && armeEnMain instanceof Baton) {
+            Baton baton = (Baton) armeEnMain;
+            degats = baton.getNiveauAttaque() * baton.getAge();  // Calcul des dégâts avec l'âge du bâton
+        }
+        // Si c'est un guerrier utilisant une épée
+        else if (this instanceof Guerrier && armeEnMain instanceof Epee) {
+            Epee epee = (Epee) armeEnMain;
+            degats = epee.getNiveauAttaque() * epee.getFinesse();  // Calcul des dégâts avec la finesse de l'épée
+        }
+
+        // Fatigue du personnage après une attaque
+        this.seFatiguer();
+
+        // Si le personnage est un magicien confirmé, ou un guerrier à cheval, diviser les dégâts par 2
+        if ((this instanceof Magicien && ((Magicien) this).estConfirme()) || 
+            (this instanceof Guerrier && ((Guerrier) this).isACheval())) {
+            degats /= 2;  // Réduction des dégâts de moitié
+        }
+
+        // Le personnage attaque l'autre personnage et lui inflige des dégâts
+        autrePersonnage.estAttaque(degats);
+        System.out.println(this.nom + " inflige " + degats + " dégâts à " + autrePersonnage.nom);
+    } else {
+        System.out.println(this.nom + " n'a pas d'arme équipée et ne peut pas attaquer !");
+    }
+}
+    
     @Override
     public String toString() {
         String description = "Nom : " + nom + ", Niveau de Vie : " + niveauVie;

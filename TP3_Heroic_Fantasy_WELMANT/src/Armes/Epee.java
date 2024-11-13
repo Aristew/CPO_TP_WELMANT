@@ -21,5 +21,13 @@ public class Epee extends Arme{
     public String toString() {
         return super.toString() + ", Finesse : " + finesse;
     }
-    
+    // Getter pour le niveau d'attaque
+    public int getNiveauAttaque() {
+        return Attaque;
+    }
+
+    // Getter pour la finesse de l'épée
+    public int getFinesse() {
+        return finesse;
+    }
 }

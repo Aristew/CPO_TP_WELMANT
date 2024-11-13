@@ -19,6 +19,15 @@ public class Baton extends Arme {
     public String toString() {
         return super.toString() + ", Age : " + age;
     }
+
+    public int getNiveauAttaque() {
+        return Attaque;
+    }
+
+    // Getter pour l'âge du bâton
+    public int getAge() {
+        return age;
+    }
    
     
     

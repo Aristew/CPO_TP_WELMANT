@@ -103,7 +103,7 @@ public class TP3_Heroic_Fantasy_WELMANT {
         ryze.ajouterArme(espadon); // 1 épée
 
         // Affichage du nombre d'armes de prédilection pour le magicien
-        System.out.println("Nombre d'armes de prrdilection de Ryze : " + ryze.compterArmesDePredilection());
+        System.out.println("Nombre d'armes de predilection de Ryze : " + ryze.compterArmesDePredilection());
 
         // Affichage des caractéristiques des personnages
         System.out.println(leonidas);
@@ -114,6 +114,26 @@ public class TP3_Heroic_Fantasy_WELMANT {
         System.out.println("Nombre total de personnages : " + Personnage.getNombrePersonnages());
         System.out.println("Nombre de guerriers : " + Guerrier.getNombreGuerriers());
         System.out.println("Nombre de magiciens : " + Magicien.getNombreMagiciens());
+        
+
+        // Fatigue du guerrier
+        leonidas.seFatiguer();
+        System.out.println("Après fatigue du guerrier : ");
+        System.out.println(leonidas);
+        System.out.println("Le guerrier est-il toujours vivant ? " + leonidas.estVivant());
+
+        // Le magicien attaque le guerrier
+        ryze.attaquer(leonidas);
+        System.out.println("Après l'attaque du magicien sur le guerrier : ");
+        System.out.println(leonidas);
+        System.out.println("Le guerrier est-il toujours vivant ? " + leonidas.estVivant());
+
+        // Le guerrier attaque le magicien
+        leonidas.attaquer(ryze);
+        System.out.println("Après l'attaque du guerrier sur le magicien : ");
+        System.out.println(ryze);
+        System.out.println(leonidas);
+        System.out.println("Le magicien est-il toujours vivant ? " + ryze.estVivant());
     }
         }
 
