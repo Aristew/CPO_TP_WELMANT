@@ -13,12 +13,14 @@ import Armes.Arme;
 import Armes.Baton;
 import Armes.Epee;
 import java.util.ArrayList;
+import tp3_heroic_fantasy_welmant.EtreVivant;
 
-public abstract class Personnage {
+public abstract class Personnage implements EtreVivant{
     private String nom;
     private int niveauVie;
     private ArrayList<Arme> inventaire;  // Liste dynamique d'armes avec limite de 5
     private Arme armeEnMain;  // Arme actuellement équipée (initialisée à null)
+    
     
     // Attribut statique pour compter le nombre total de personnages
     private static int nombrePersonnages = 0;
@@ -84,6 +86,10 @@ public abstract class Personnage {
         return compteur;
     }
 
+    /**
+     *
+     * @throws Throwable
+     */
     @Override
     protected void finalize() throws Throwable {
         try {
@@ -92,14 +98,31 @@ public abstract class Personnage {
             super.finalize();  // Appel à la méthode finalize() de la superclasse
         }
     }
-
+    @Override
+    public void seFatiguer() {
+        // La fatigue fait perdre 10 points de vie à chaque appel
+        niveauVie -= 10;
+        System.out.println(nom + " se fatigue, perte de 10 points de vie.");
+    }
+    
+    @Override
+    public boolean estVivant() {
+        // Un personnage est vivant tant que son niveau de vie est supérieur à 0
+        return niveauVie > 0;
+    }
+     @Override
+    public void estAttaque(int points) {
+        // Quand un personnage est attaqué, il perd un certain nombre de points de vie
+        niveauVie -= points;
+        System.out.println(nom + " a ete attaque et a perdu " + points + " points de vie.");
+    }
     @Override
     public String toString() {
         String description = "Nom : " + nom + ", Niveau de Vie : " + niveauVie;
         if (armeEnMain != null) {
             description += ", Arme en Main : " + armeEnMain;
         } else {
-            description += ", Pas d'arme équipée";
+            description += ", Pas d'arme equipee";
         }
         return description;
     }
